@@ -191,6 +191,21 @@
       overflow: hidden;
     }
 
+    /* 背景画像：Visionaryイラストを透かしとして配置 */
+    .hero-watermark {
+      position: absolute;
+      width: min(680px, 72vw);
+      aspect-ratio: 1 / 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url('./assets/e10_visionary.png') center / contain no-repeat;
+      opacity: 0.12;
+      filter: saturate(0.75) contrast(0.9);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     /* 背景装飾：薄い円 */
     .hero::before {
       content: '';
@@ -201,6 +216,7 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       animation: heroRing 12s ease-in-out infinite;
+      z-index: 0;
     }
     .hero::after {
       content: '';
@@ -211,6 +227,7 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       animation: heroRing 12s 2s ease-in-out infinite;
+      z-index: 0;
     }
     @keyframes heroRing {
       0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
@@ -631,6 +648,8 @@
 
       .hero-inner { padding: 3rem 1rem 2.5rem; }
 
+      .hero-watermark { width: min(560px, 94vw); opacity: 0.10; }
+
       .section-wrap { padding: 3.5rem 1.25rem 4rem; }
 
       .contents-list {
@@ -727,6 +746,7 @@
        HERO
   ================================================================ -->
   <section class="hero" id="top">
+    <div class="hero-watermark" aria-hidden="true"></div>
     <div class="hero-inner">
 
       <p class="hero-en">Be Happier</p>
