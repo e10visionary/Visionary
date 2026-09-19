@@ -191,6 +191,21 @@
       overflow: hidden;
     }
 
+    /* 背景画像：Visionaryイラストを透かしとして配置 */
+    .hero-watermark {
+      position: absolute;
+      width: min(680px, 72vw);
+      aspect-ratio: 1 / 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url('./assets/e10_visionary.png') center / contain no-repeat;
+      opacity: 0.12;
+      filter: saturate(0.75) contrast(0.9);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     /* 背景装飾：薄い円 */
     .hero::before {
       content: '';
@@ -201,6 +216,7 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       animation: heroRing 12s ease-in-out infinite;
+      z-index: 0;
     }
     .hero::after {
       content: '';
@@ -211,6 +227,7 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       animation: heroRing 12s 2s ease-in-out infinite;
+      z-index: 0;
     }
     @keyframes heroRing {
       0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.6; }
@@ -611,92 +628,6 @@
       margin: 2rem auto;
     }
 
-    /* ================================================================
-       FOOTER
-    ================================================================ */
-    .site-footer {
-      background: #0a1b2e;
-      color: rgba(255,255,255,0.6);
-      padding: 3.5rem 2.5rem 2rem;
-    }
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 2rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      flex-wrap: wrap;
-    }
-    .footer-brand {
-      flex: 1;
-      min-width: 200px;
-    }
-    .footer-site-title {
-      font-family: var(--font-serif);
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.6;
-      margin-bottom: 0.6rem;
-      max-width: 28ch;
-    }
-    .footer-tagline {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.06em;
-    }
-    .footer-nav-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-    }
-    .footer-nav-group h4 {
-      font-family: var(--font-en);
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 0.25rem;
-    }
-    .footer-nav-group a {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.55);
-      transition: color 0.25s;
-      line-height: 1.4;
-    }
-    .footer-nav-group a:hover { color: #fff; }
-
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 2rem;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .footer-copy {
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.05em;
-    }
-    .footer-langs {
-      display: flex;
-      gap: 1rem;
-    }
-    .footer-langs a {
-      font-family: var(--font-en);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.35);
-      transition: color 0.25s;
-    }
-    .footer-langs a.active,
-    .footer-langs a:hover { color: rgba(255,255,255,0.85); }
 
     /* ================================================================
        RESPONSIVE
@@ -709,8 +640,6 @@
       .contents-list {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .footer-top { flex-direction: column; }
     }
 
     /* SP */
@@ -719,6 +648,8 @@
 
       .hero-inner { padding: 3rem 1rem 2.5rem; }
 
+      .hero-watermark { width: min(560px, 94vw); opacity: 0.10; }
+
       .section-wrap { padding: 3.5rem 1.25rem 4rem; }
 
       .contents-list {
@@ -726,7 +657,6 @@
       }
 
       .about-section { padding: 3.5rem 1.25rem; }
-      .site-footer   { padding: 2.5rem 1.25rem 1.5rem; }
     }
 
     /* ================================================================
@@ -849,11 +779,6 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 
       <div class="section-header reveal">
         <span class="section-label">Contents</span>
-        <h2 class="section-title">コンテンツ一覧</h2>
-        <p class="section-sub">
-          各章について書き手の思いや考えを記しています。<br>
-          下記よりご覧ください。
-        </p>
       </div>
 
       <ul class="contents-list">
@@ -1053,11 +978,6 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
   <section class="about-section" id="about">
     <div class="about-inner">
       <span class="about-en">About this site</span>
-      <h2 class="about-title">
-        自由と公正のもと、<br>
-        一人ひとりがより幸福に生きようとする<br>
-        機会を創り続けられる世界
-      </h2>
       <div class="about-divider"></div>
       <p class="about-body">
         このサイトについての説明文・メッセージをここに入力します。<br>
@@ -1066,59 +986,12 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
         読者への思いや、このサイトが大切にしている価値観なども<br>
         ここで表現することができます。
       </p>
-      <p><a href="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001">本編はこちら</a></p>
+      <p style="margin-top:30px;"><a href="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001">本編はこちら</a></p>
 
     </div>
   </section>
 
-  <!-- ================================================================
-       FOOTER
-  ================================================================ -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <p class="footer-site-title">
-            自由と公正のもと、一人ひとりが<br>より幸福に生きようとする<br>機会を創り続けられる世界
-          </p>
-          <p class="footer-tagline">Be Happier</p>
-        </div>
-
-        <div class="footer-nav-group">
-          <h4>Contents</h4>
-          <a href="contents_pre.html">序章　継承者たちの航海日誌</a>
-          <a href="contents_01.html">第一章　総論</a>
-          <a href="contents_02.html">第二章　共生を可能とする経済社会</a>
-          <a href="contents_03.html">第三章　人の生の有り様とそれを支える産業</a>
-          <a href="contents_04.html">第四章　技術革新と社会の両立</a>
-        </div>
-
-        <div class="footer-nav-group">
-          <h4>&nbsp;</h4>
-          <a href="contents_05.html">第五章　大義ある未来のための教育</a>
-          <a href="contents_06.html">第六章　ビジネスモデル</a>
-          <a href="contents_07.html">終章　終わりなき航海</a>
-        </div>
-
-        <div class="footer-nav-group">
-          <h4>Site</h4>
-          <a href="#about">サイトについて</a>
-          <a href="#">プライバシーポリシー</a>
-          <a href="#">お問い合わせ</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 All rights reserved.</p>
-        <div class="footer-langs">
-          <a href="index.html">Ja</a>
-          <a href="index_en.html" class="active">En</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ================================================================
+<!-- ================================================================
        JAVASCRIPT
   ================================================================ -->
   <script>
