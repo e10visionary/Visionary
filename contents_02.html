@@ -10,6 +10,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link href="assets/common.css" rel="stylesheet" />
+
+  <style>
+    /* GTranslate language selector */
+    .header-lang .gtranslate_wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .header-lang select.gt_selector {
+      font-family: 'EB Garamond', 'Noto Sans JP', sans-serif;
+      font-size: .88rem;
+      letter-spacing: .04em;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      padding: .25rem 1.35rem .25rem .2rem;
+    }
+    @media (max-width: 768px) {
+      .header-lang select.gt_selector {
+        font-size: .82rem;
+        max-width: 135px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,16 +42,13 @@
 
   <!-- HEADER -->
   <header class="site-header" id="siteHeader">
-    <div class="header-lang">
-      <a href="index.html" class="active">Ja</a>
-      <span class="sep">·</span>
-      <a href="index_en.html">En</a>
+    <div class="header-lang notranslate">
+      <div class="gtranslate_wrapper"></div>
     </div>
     <div class="header-right">
       <nav class="header-nav">
         <a href="index.html#contents">コンテンツ</a>
         <a href="index.html#about">サイトについて</a>
-        <a href="#">お問い合わせ</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="メニュー">
         <span></span><span></span><span></span>
@@ -37,21 +59,16 @@
   <nav class="mobile-menu" id="mobileMenu">
     <a href="index.html#contents">コンテンツ</a>
     <a href="index.html#about">サイトについて</a>
-    <a href="#">お問い合わせ</a>
-    <div style="display:flex;gap:1rem;margin-top:.5rem">
-      <a href="index.html" style="font-family:'EB Garamond',serif;font-size:.9rem;letter-spacing:.1em">Ja</a>
-      <a href="index_en.html" style="font-family:'EB Garamond',serif;font-size:.9rem;letter-spacing:.1em;color:#6b7280">En</a>
-    </div>
   </nav>
 
   <!-- PAGE HERO -->
   <section class="page-hero">
-    <div class="page-hero-bg" style="background:linear-gradient(135deg,#12324e 0%,#1e4d6b 60%,#3a7fa8 100%);"></div>
+    <div class="page-hero-bg" style="background:linear-gradient(135deg,#0d2340 0%,#1a3a5c 60%,#2d6a9f 100%);"></div>
     <div class="page-hero-inner">
       <p class="page-hero-en">Chapter II</p>
       <span class="page-hero-badge">第二章</span>
       <h1 class="page-hero-title">第二章　共生を可能とする経済社会
-      <div class="img-placeholder"><img src="assets/chapter2/2-jap_infographics_20260401.png"></div>
+      <div class="img-placeholder"><img src="./assets/summary/chapter2.png" data-ja="./assets/summary/chapter2.png" data-en="./assets/summary/chapter2_en.png" alt="prologue"></div>
       </h1>
       <div class="page-hero-divider"></div>
     </div>
@@ -637,45 +654,6 @@
 
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <p class="footer-site-title">
-            自由と公正のもと、一人ひとりが<br>より幸福に生きようとする<br>機会を創り続けられる世界
-          </p>
-          <p class="footer-tagline">Freedom · Fairness · Happiness</p>
-        </div>
-        <div class="footer-nav-group">
-          <h4>Contents</h4>
-          <a href="contents_pre.html">序章　継承者たちの航海日誌</a>
-          <a href="contents_01.html">第一章　総論</a>
-          <a href="contents_02.html">第二章　共生を可能とする経済社会</a>
-          <a href="contents_03.html">第三章　人の生の有り様とそれを支える産業</a>
-          <a href="contents_04.html">第四章　技術革新と社会の両立</a>
-        </div>
-        <div class="footer-nav-group">
-          <h4>&nbsp;</h4>
-          <a href="contents_05.html">第五章　大義ある未来のための教育</a>
-          <a href="contents_06.html">第六章　ビジネスモデル</a>
-          <a href="contents_07.html">終章　終わりなき航海</a>
-        </div>
-        <div class="footer-nav-group">
-          <h4>Site</h4>
-          <a href="index.html#about">サイトについて</a>
-          <a href="#">プライバシーポリシー</a>
-          <a href="#">お問い合わせ</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 All rights reserved.</p>
-        <div class="footer-langs">
-          <a href="index.html" class="active">Ja</a>
-          <a href="index_en.html">En</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <!-- トップに戻るボタン -->
   <button class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
@@ -717,7 +695,7 @@
       });
     });
 
-    /* ── IntersectionObserver：スクロールイン ── */
+    /* ── IntersectionObserver:スクロールイン ── */
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -725,7 +703,7 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.03, rootMargin: '0px 0px 20px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.content-section').forEach(el => io.observe(el));
 
     /* ── ページ遷移 ── */
@@ -744,6 +722,80 @@
       });
     });
 
+  </script>
+
+  <!-- GTranslate Free: Japanese / English -->
+  <script>
+    window.gtranslateSettings = {
+      "default_language": "ja",
+      "native_language_names": true,
+      "detect_browser_language": false,
+      "languages": ["ja", "en"],
+      "wrapper_selector": ".gtranslate_wrapper"
+    };
+  </script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
+  <!--
+    日本語は翻訳で戻さず、ページ再読込で原文を再描画する。
+    change を capture フェーズで監視し、GTranslate側の処理より先に検知する。
+  -->
+  <script>
+    document.addEventListener('change', function (event) {
+      const selector = event.target;
+
+      if (
+        selector &&
+        selector.matches &&
+        selector.matches('.gtranslate_wrapper select.gt_selector') &&
+        selector.value === 'ja'
+      ) {
+        event.stopImmediatePropagation();
+        window.location.reload();
+      }
+    }, true);
+  </script>
+
+  <!-- 言語選択に合わせて図版も日英で切り替える -->
+  <script>
+    (function () {
+      function switchChapterImages(lang) {
+        document.querySelectorAll('img[data-ja][data-en]').forEach(function (img) {
+          img.src = (lang === 'en') ? img.dataset.en : img.dataset.ja;
+        });
+      }
+
+      // GTranslateのselectorは外部JSが後から生成するため、changeをdocumentで監視
+      // value は 'ja|ja' / 'ja|en' の形式で返る
+      document.addEventListener('change', function (event) {
+        const selector = event.target;
+        if (!selector || !selector.matches ||
+            !selector.matches('.gtranslate_wrapper select.gt_selector')) return;
+
+        if (selector.value === 'ja|en') {
+          switchChapterImages('en');
+        } else if (selector.value === 'ja|ja') {
+          switchChapterImages('ja');
+        }
+      });
+
+      // 翻訳状態を維持した再読込にも対応。
+      // GTranslateのselector生成後、その現在値に画像を合わせる。
+      function syncImagesWithSelector(attempt) {
+        const selector = document.querySelector('.gtranslate_wrapper select.gt_selector');
+        if (selector) {
+          switchChapterImages(selector.value === 'ja|en' ? 'en' : 'ja');
+          return;
+        }
+        if (attempt < 50) {
+          setTimeout(function () { syncImagesWithSelector(attempt + 1); }, 100);
+        }
+      }
+
+      window.addEventListener('load', function () {
+        syncImagesWithSelector(0);
+      });
+    })();
   </script>
 
 </body>
