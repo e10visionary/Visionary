@@ -10,6 +10,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link href="assets/common.css" rel="stylesheet" />
+
+  <style>
+    .header-lang .gtranslate_wrapper {
+      display:flex;
+      align-items:center;
+    }
+    .header-lang select.gt_selector {
+      font-family:'EB Garamond','Noto Sans JP',sans-serif;
+      font-size:.88rem;
+      letter-spacing:.04em;
+      color:inherit;
+      background:transparent;
+      border:0;
+      outline:0;
+      cursor:pointer;
+      padding:.25rem 1.35rem .25rem .2rem;
+    }
+    @media (max-width:768px) {
+      .header-lang select.gt_selector {
+        font-size:.82rem;
+        max-width:135px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -17,16 +41,13 @@
 
   <!-- HEADER -->
   <header class="site-header" id="siteHeader">
-    <div class="header-lang">
-      <a href="index.html" class="active">Ja</a>
-      <span class="sep">·</span>
-      <a href="index_en.html">En</a>
+    <div class="header-lang notranslate">
+      <div class="gtranslate_wrapper"></div>
     </div>
     <div class="header-right">
       <nav class="header-nav">
         <a href="index.html#contents">コンテンツ</a>
         <a href="index.html#about">サイトについて</a>
-        <a href="#">お問い合わせ</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="メニュー">
         <span></span><span></span><span></span>
@@ -37,11 +58,7 @@
   <nav class="mobile-menu" id="mobileMenu">
     <a href="index.html#contents">コンテンツ</a>
     <a href="index.html#about">サイトについて</a>
-    <a href="#">お問い合わせ</a>
-    <div style="display:flex;gap:1rem;margin-top:.5rem">
-      <a href="index.html" style="font-family:'EB Garamond',serif;font-size:.9rem;letter-spacing:.1em">Ja</a>
-      <a href="index_en.html" style="font-family:'EB Garamond',serif;font-size:.9rem;letter-spacing:.1em;color:#6b7280">En</a>
-    </div>
+
   </nav>
 
   <!-- PAGE HERO -->
@@ -50,7 +67,9 @@
     <div class="page-hero-inner">
       <p class="page-hero-en">Chapter VI</p>
       <span class="page-hero-badge">第六章</span>
-      <h1 class="page-hero-title">第六章　ビジネスモデル</h1>
+      <h1 class="page-hero-title">第六章　ビジネスモデル
+      <div class="img-placeholder"><img src="./assets/summary/chapter6.png" data-ja="./assets/summary/chapter6.png" data-en="./assets/summary/chapter6_en.png" alt="business models"></div>
+      </h1>
       <div class="page-hero-divider"></div>
     </div>
     <div class="page-hero-wave">
@@ -60,50 +79,26 @@
     </div>
   </section>
 
-  <!-- BREADCRUMB -->
-  <nav class="breadcrumb" aria-label="パンくず">
-    <div class="breadcrumb-inner">
-      <a href="index.html">トップ</a>
-      <span class="sep">›</span>
-      <span class="current">第六章　ビジネスモデル</span>
-    </div>
-  </nav>
-
   <!-- MAIN CONTENT -->
   <main class="content-main">
 
     <!-- リード文 -->
     <p class="content-lead">
-      ここにこの章のリード文（導入文）を入力します。<br>
-      章全体のテーマや問いを簡潔に示す1〜2文程度の文章をご記述ください。
+      本章では、これまで描いてきた「大義ある未来」を、あえて“ビジネスモデル”という形に落とし込むことを試みる。改めて強調しておきたいのは、E10が「ビジネスになること」に意図的にこだわった、という点である。
     </p>
 
     <!-- 本文セクション -->
-
-      <div class="content-section">
-        <h2>ビジネスの目的を再定義する</h2>
-        <p>ここにビジネスの目的再定義についてのテキストを入力します。利益最大化から社会価値創造へのシフトを、理論と実例をもとに論述してください。</p>
-        <div class="img-placeholder">Image Placeholder — 画像をここに配置してください</div>
-        <p>ここに続く本文テキストを入力してください。段落を追加する場合は &lt;p&gt; タグを複製してください。</p>
-      </div>
-      <div class="content-section">
-        <h2>自由・公正・幸福を実現するビジネス</h2>
-        <p>ここに価値創造型ビジネスについてのテキストを入力します。社会課題を事業機会として捉えるビジネスモデルの設計原則を記述してください。</p>
-        <div class="img-placeholder">Image Placeholder — 画像をここに配置してください</div>
-        <p>ここに続く本文テキストを入力してください。段落を追加する場合は &lt;p&gt; タグを複製してください。</p>
-      </div>
-      <div class="content-section">
-        <h2>事業モデルの具体例</h2>
-        <p>ここにビジネスモデルの具体例についてのテキストを入力します。国内外の先進事例を参照しながら、本書が提唱するモデルの実現可能性を論述してください。</p>
-        <div class="img-placeholder">Image Placeholder — 画像をここに配置してください</div>
-        <p>ここに続く本文テキストを入力してください。段落を追加する場合は &lt;p&gt; タグを複製してください。</p>
-      </div>
-      <div class="content-section">
-        <h2>持続可能な経営の指標</h2>
-        <p>ここに持続可能な経営指標についてのテキストを入力します。財務指標を超えた評価軸（社会・環境・人材）をどのように設計するかを記述してください。</p>
-        <div class="img-placeholder">Image Placeholder — 画像をここに配置してください</div>
-        <p>ここに続く本文テキストを入力してください。段落を追加する場合は &lt;p&gt; タグを複製してください。</p>
-      </div>
+    <div class="content-section">
+      <p>前章までに整理した通り、現状の延長線上にある世界と、我々が実現したい未来の姿とのあいだには、依然として大きなギャップが存在する。制度や価値観の変化、市民社会の動き、テクノロジーの進展など、多様な要因がそのギャップを縮めていくことになるが、本章ではそのうち「ビジネス」というレバーに焦点を当てる。すなわち、どのような事業を設計し、どのようなプレイヤーが動くことで、そのギャップを橋渡しできるのかを描き出すことを目的としている。</p>
+      <p>こうした検討を行うにあたっては、これまでの各テーマ別グループを一度解体し、グループ横断の編成によるチームで議論を重ねた。経済・社会制度・教育・テクノロジーといった切り口をまたいでメンバーを再配置したことで、従来の枠組みにとらわれない「横断」「融合」型の発想が生まれ、単一テーマでは到達しえなかったビジネスの構想へとつなげることができたと自負している。複数のビジネスモデルに共通して流れる論点やシナジーについては、本章の冒頭でベン図（図6-1）を用いて視覚的に整理し、個別のプラン間の関係性が一目で把握できるようにしている。</p>
+      <p>本章で提示するビジネスはいずれも、「いま現在、十分にはビジネス化されていない／されにくい領域」に意識的に踏み込んでいる。そこには共通して、乗り越えなければならない課題やギャップが存在するが、我々は、まさにその「まだビジネスになっていない」という事実の中に、次の時代のチャンスが潜んでいると考えた。</p>
+      <p>そこで各ビジネスモデルでは、現状分析と構想の提示にとどまらず、実現に向けて何が「鍵」となるのかを明らかにするために、キーサクセスファクター（Key Success Factors）を明示している。それを可能な限り具体的に示すことで、単なる理想論ではなく、「バックキャストで乗り越えるべき道筋は何なのか」を示し、やろうと思えば現実に起こし得るモデルとなることを目指した。</p>
+      <p>ビジネス化にこだわった背景には、もちろん理由がある。ある取り組みがビジネスとして収益を生み出し得る構造を備えれば、それは助成金や一過性のプロジェクトに依存せず、長期にわたって持続可能になる可能性が高まる。また、我々はビジネスモデルにとどまらず、数字化し、収益性を検証することにもチャレンジした。その意味で、本章に登場するビジネスモデルは、「大義ある未来」を十分継続的に支えるエンジンとなるものとして構想しているものも含まれている。</p>
+      <p>一方で、ここで示すビジネスが、すぐに事業化できるものばかりではないことも、率直に認めておきたい。むしろ、多くのビジネスモデルは、現時点では収益性・制度面・組織能力など様々な観点から高いハードルを抱えている。その意味で、本章は「すぐに実行できる事業計画書集」ではなく、「大義ある未来に向けて、どこにビジネスの可能性があり、何を乗り越えればよいのかを可視化した試案集」といえよう。</p>
+      <p>さらに重要なのは、本章で提示するビジネスだけで「大義ある未来」が完結するわけではない、という点である。ここに示したビジネスモデルは、教育、制度改革、市民活動など、他の取り組みと組み合わさって初めて意味を持つ、いわば補集合としてのビジネス群である。本書全体を通じて繰り返してきたように、未来はビジネスだけでつくられるものではない。しかし、ビジネスが果たしうる役割を具体的に描き切ることは、必ずやその未来を一歩現実に近づけるはずだ。</p>
+      <p>以上を踏まえ、本章では、横断・融合から生まれた複数のビジネスプランを順に紹介しつつ、ビジネスモデルごとに「現状の延長線上の世界」と「実現したい未来像」のギャップ、そしてそのギャップを埋めるためのキーサクセスファクターを提示していく。</p>
+      <p>ここで描かれるプランの一つひとつが、読者自身の現場における新たなビジネスの着想や、既存事業の再設計のヒントとなることを願っている。</p>
+    </div>
 
     <!-- 前後ナビ -->
     <nav class="pn-nav" aria-label="前後のページ">
@@ -128,48 +123,24 @@
 
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <p class="footer-site-title">
-            自由と公正のもと、一人ひとりが<br>より幸福に生きようとする<br>機会を創り続けられる世界
-          </p>
-          <p class="footer-tagline">Freedom · Fairness · Happiness</p>
-        </div>
-        <div class="footer-nav-group">
-          <h4>Contents</h4>
-          <a href="contents_pre.html">序章　継承者たちの航海日誌</a>
-          <a href="contents_01.html">第一章　総論</a>
-          <a href="contents_02.html">第二章　共生を可能とする経済社会</a>
-          <a href="contents_03.html">第三章　人の生の有り様とそれを支える産業</a>
-          <a href="contents_04.html">第四章　技術革新と社会の両立</a>
-        </div>
-        <div class="footer-nav-group">
-          <h4>&nbsp;</h4>
-          <a href="contents_05.html">第五章　大義ある未来のための教育</a>
-          <a href="contents_06.html">第六章　ビジネスモデル</a>
-          <a href="contents_07.html">終章　終わりなき航海</a>
-          <a href="contents_epi.html">エピローグ（E10メンバーの思い）</a>
-        </div>
-        <div class="footer-nav-group">
-          <h4>Site</h4>
-          <a href="index.html#about">サイトについて</a>
-          <a href="#">プライバシーポリシー</a>
-          <a href="#">お問い合わせ</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-copy">&copy; 2025 All rights reserved.</p>
-        <div class="footer-langs">
-          <a href="index.html" class="active">Ja</a>
-          <a href="index_en.html">En</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+
+  <!-- トップに戻るボタン -->
+  <button class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
   <script>
+
+    /* ── トップに戻るボタン ── */
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
     /* ── ヘッダー スクロール ── */
     const hdr = document.getElementById('siteHeader');
@@ -220,6 +191,81 @@
       });
     });
 
+  </script>
+
+
+  <!-- GTranslate Free -->
+  <script>
+    window.gtranslateSettings = {
+      "default_language": "ja",
+      "native_language_names": true,
+      "detect_browser_language": false,
+      "languages": ["ja", "en"],
+      "wrapper_selector": ".gtranslate_wrapper"
+    };
+  </script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
+  <!--
+    日本語は翻訳で戻さず、ページ再読込で原文を再描画する。
+    change を capture フェーズで監視し、GTranslate側の処理より先に検知する。
+  -->
+  <script>
+    document.addEventListener('change', function (event) {
+      const selector = event.target;
+
+      if (
+        selector &&
+        selector.matches &&
+        selector.matches('.gtranslate_wrapper select.gt_selector') &&
+        selector.value === 'ja'
+      ) {
+        event.stopImmediatePropagation();
+        window.location.reload();
+      }
+    }, true);
+  </script>
+
+  <!-- 言語選択に合わせて図版も日英で切り替える -->
+  <script>
+    (function () {
+      function switchChapterImages(lang) {
+        document.querySelectorAll('img[data-ja][data-en]').forEach(function (img) {
+          img.src = (lang === 'en') ? img.dataset.en : img.dataset.ja;
+        });
+      }
+
+      // GTranslateのselectorは外部JSが後から生成するため、changeをdocumentで監視
+      // value は 'ja|ja' / 'ja|en' の形式で返る
+      document.addEventListener('change', function (event) {
+        const selector = event.target;
+        if (!selector || !selector.matches ||
+            !selector.matches('.gtranslate_wrapper select.gt_selector')) return;
+
+        if (selector.value === 'ja|en') {
+          switchChapterImages('en');
+        } else if (selector.value === 'ja|ja') {
+          switchChapterImages('ja');
+        }
+      });
+
+      // 翻訳状態を維持した再読込にも対応。
+      // GTranslateのselector生成後、その現在値に画像を合わせる。
+      function syncImagesWithSelector(attempt) {
+        const selector = document.querySelector('.gtranslate_wrapper select.gt_selector');
+        if (selector) {
+          switchChapterImages(selector.value === 'ja|en' ? 'en' : 'ja');
+          return;
+        }
+        if (attempt < 50) {
+          setTimeout(function () { syncImagesWithSelector(attempt + 1); }, 100);
+        }
+      }
+
+      window.addEventListener('load', function () {
+        syncImagesWithSelector(0);
+      });
+    })();
   </script>
 
 </body>
