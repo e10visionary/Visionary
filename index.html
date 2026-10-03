@@ -1,17 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>自由と公正のもと、一人ひとりがより幸福に生きようとする機会を創り続けられる世界</title>
-  <meta name="description" content="自由と公正のもと、一人ひとりがより幸福に生きようとする機会を創り続けられる世界を目指して。" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>自由と公正のもと、一人ひとりがより幸福に生きようとする機会を創り続けられる世界</title>
+<meta content="自由と公正のもと、一人ひとりがより幸福に生きようとする機会を創り続けられる世界を目指して。" name="description"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&amp;family=Noto+Sans+JP:wght@300;400;500&amp;family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<style>
     /* ================================================================
        RESET & BASE
     ================================================================ */
@@ -699,89 +698,97 @@
       box-shadow: 0 2px 16px rgba(13,35,64,0.10);
     }
   </style>
-</head>
+<style>
+    /* GTranslate language selector */
+    .header-lang .gtranslate_wrapper {
+      display: flex;
+      align-items: center;
+    }
+    .header-lang select.gt_selector {
+      font-family: 'EB Garamond', 'Noto Sans JP', sans-serif;
+      font-size: .88rem;
+      letter-spacing: .04em;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      padding: .25rem 1.35rem .25rem .2rem;
+    }
 
+    /* index_en.html 由来のこだわり英訳 */
+    .curated-en { display: none; }
+
+    html[data-curated-lang="en"] .curated-ja { display: none; }
+    html[data-curated-lang="en"] .curated-en { display: inline; }
+
+    @media (max-width: 768px) {
+      .header-lang select.gt_selector {
+        font-size: .82rem;
+        max-width: 135px;
+      }
+    }
+</style></head>
 <body>
-
-  <!-- ページトランジション -->
-  <div class="page-overlay" id="pageOverlay"></div>
-
-  <!-- ================================================================
+<!-- ページトランジション -->
+<div class="page-overlay" id="pageOverlay"></div>
+<!-- ================================================================
        HEADER
   ================================================================ -->
-  <header class="site-header" id="siteHeader">
+<header class="site-header" id="siteHeader">
+<!-- 言語切替（左） -->
+<div class="header-lang notranslate"><div class="gtranslate_wrapper"></div></div>
+<!-- ナビ（右） -->
+<div class="header-right">
+<nav class="header-nav">
+<a href="#contents">コンテンツ</a>
+<a href="#about">サイトについて</a>
+</nav>
+<button aria-label="メニュー" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<!-- モバイルメニュー -->
+<nav class="mobile-menu" id="mobileMenu">
+<a href="#contents">コンテンツ</a>
+<a href="#about">サイトについて</a>
 
-    <!-- 言語切替（左） -->
-    <div class="header-lang">
-      <a href="index.html"    class="active">Ja</a>
-      <span class="sep">·</span>
-      <a href="index_en.html">En</a>
-    </div>
-
-    <!-- ナビ（右） -->
-    <div class="header-right">
-      <nav class="header-nav">
-        <a href="#contents">コンテンツ</a>
-        <a href="#about">サイトについて</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="メニュー">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- モバイルメニュー -->
-  <nav class="mobile-menu" id="mobileMenu">
-    <a href="#contents">コンテンツ</a>
-    <a href="#about">サイトについて</a>
-    <div style="display:flex;gap:1rem;margin-top:0.5rem">
-      <a href="index.html"    style="font-family:'EB Garamond',serif;font-size:0.9rem;letter-spacing:.1em">Ja</a>
-      <a href="index_en.html" style="font-family:'EB Garamond',serif;font-size:0.9rem;letter-spacing:.1em;color:#6b7280">En</a>
-    </div>
-  </nav>
-
-  <!-- ================================================================
+</nav>
+<!-- ================================================================
        HERO
   ================================================================ -->
-  <section class="hero" id="top">
-    <div class="hero-watermark" aria-hidden="true"></div>
-    <div class="hero-inner">
-
-      <p class="hero-en">Be Happier</p>
-
-      <h1 class="hero-title">
-        自由と公正のもと、<br>
-        一人ひとりがより<span class="highlight">幸福</span>に<br>
-        生きようとする機会を<br>
+<section class="hero" id="top">
+<div aria-hidden="true" class="hero-watermark"></div>
+<div class="hero-inner">
+<p class="hero-en">Be Happier</p>
+<h1 class="hero-title">
+        自由と公正のもと、<br/>
+        一人ひとりがより<span class="highlight">幸福</span>に<br/>
+        生きようとする機会を<br/>
         創り続けられる世界
       </h1>
-
-      <div class="hero-divider"></div>
-
-      <p class="hero-body">
-        未来は予測するものではなく、創るもの。52人の知恵と情熱を結集し、「大義ある未来」への挑戦を描きました。2050年のあるべき社会を見据え、価値観・行動原則・ビジネスモデルを通じて未来創造への道筋を示します。
+<div class="hero-divider"></div>
+<p class="hero-body">
+        <span class="curated-lang curated-ja notranslate">未来は予測するものではなく、創るもの。52人の知恵と情熱を結集し、「大義ある未来」への挑戦を描きました。2050年のあるべき社会を見据え、価値観・行動原則・ビジネスモデルを通じて未来創造への道筋を示します。</span><span class="curated-lang curated-en notranslate" lang="en">The future is not something to be predicted. It is something to be created.
+Bringing together the wisdom and passion of 52 individuals, this report charts a path toward a Purposeful Future. Looking ahead to the society we aspire to realize by 2050, it presents a roadmap for shaping the future through shared values, guiding principles, and innovative business models.</span>
       </p>
-    </div>
-
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-bar"></div>
-    </div>
-  </section>
-
-  <!-- ================================================================
+</div>
+<div class="hero-scroll">
+<span>Scroll</span>
+<div class="scroll-bar"></div>
+</div>
+</section>
+<!-- ================================================================
        CONTENTS SECTION
   ================================================================ -->
-  <section id="contents">
-    <div class="section-wrap">
-
-      <div class="section-header reveal">
-        <span class="section-label">Contents</span>
-      </div>
-
-      <ul class="contents-list">
-
-        <!-- ══════════════════════════════════════════
+<section id="contents">
+<div class="section-wrap">
+<div class="section-header reveal">
+<span class="section-label">Contents</span>
+</div>
+<ul class="contents-list">
+<!-- ══════════════════════════════════════════
              ① 序章
              ▼ data-href にリンク先ページを指定
              ▼ 画像を使う場合: card-thumb-placeholder を
@@ -790,209 +797,198 @@
                </div>
                に差し替えてください
         ══════════════════════════════════════════ -->
-        <li>
-          <a class="content-card" href="contents_pre.html" data-href="contents_pre.html">
-            <div class="card-thumb-placeholder">
-              <span class="ph-num"><img src="./assets/summary/chapter_pre.png" /></span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Prologue</span>
-              <h3 class="card-title">序章　2050年大義ある未来への羅針盤</h3>
-              <p class="card-excerpt">
-                2050年の「大義ある未来」をテーマに、52名のビジネスリーダーが描いた未来社会像とその実現に向けた実践的なビジネスモデルをまとめた提言です。
+<li>
+<a class="content-card" data-href="contents_pre.html" href="contents_pre.html">
+<div class="card-thumb-placeholder">
+<span class="ph-num"><img src="./assets/summary/chapter_pre.png"/></span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Prologue</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">序章　2050年大義ある未来への羅針盤</span><span class="curated-lang curated-en notranslate" lang="en">Visionary Project: A Compass toward a "Purposeful Future" in 2050</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">2050年の「大義ある未来」をテーマに、52名のビジネスリーダーが描いた未来社会像とその実現に向けた実践的なビジネスモデルをまとめた提言です。</span><span class="curated-lang curated-en notranslate" lang="en">Under the shared vision of a “Purposeful Future in 2050,” this report presents a comprehensive set of future societal scenarios envisioned by 52 business leaders, together with practical business models and strategic recommendations for realizing that vision.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-        <!-- ② 第一章 -->
-        <li>
-          <a class="content-card" href="contents_01.html" data-href="contents_01.html">
-            <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0d2340 0%,#1a3a5c 60%,#2d6a9f 100%);">
-              <span class="ph-num"><img src="./assets/summary/chapter1.png" /></span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Chapter I</span>
-              <h3 class="card-title">第一章　2050年大義ある未来への羅針盤</h3>
-              <p class="card-excerpt">
-                未来は予測するものではなく、創るものである。本章では、2050年の「大義ある未来」を描き、その実現に向けた価値観、行動原則を提示し、社会変革の方向性を示します。
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+<!-- ② 第一章 -->
+<li>
+<a class="content-card" data-href="contents_01.html" href="contents_01.html">
+<div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0d2340 0%,#1a3a5c 60%,#2d6a9f 100%);">
+<span class="ph-num"><img src="./assets/summary/chapter1.png"/></span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Chapter I</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">第一章　2050年大義ある未来への羅針盤</span><span class="curated-lang curated-en notranslate" lang="en">"Purposeful Future" in 2050: The Visionary Project</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">未来は予測するものではなく、創るものである。本章では、2050年の「大義ある未来」を描き、その実現に向けた価値観、行動原則を提示し、社会変革の方向性を示します。</span><span class="curated-lang curated-en notranslate" lang="en">The future is not merely to be predicted, but to be intentionally shaped. This chapter defines a “Purposeful Future” for 2050, articulating the values, guiding principles, and societal transformations required to achieve it, while providing a strategic framework for collective action.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-        <!-- ③ 第二章 -->
-        <li>
-          <a class="content-card" href="contents_02.html" data-href="contents_02.html">
-            <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#12324e 0%,#1e4d6b 60%,#3a7fa8 100%);">
-              <span class="ph-num"><img src="./assets/summary/chapter2.png" /></span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Chapter II</span>
-              <h3 class="card-title">第二章　共生を可能とする経済社会</h3>
-              <p class="card-excerpt">
-                資本主義が抱える課題を乗り越え、自由と公正を基盤とした「ステークホルダー資本主義」や「循環型社会」への転換を通じて、誰もが幸福を追求できる2050年の共生社会の実現を目指します。
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+<!-- ③ 第二章 -->
+<li>
+<a class="content-card" data-href="contents_02.html" href="contents_02.html">
+<div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#12324e 0%,#1e4d6b 60%,#3a7fa8 100%);">
+<span class="ph-num"><img src="./assets/summary/chapter2.png"/></span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Chapter II</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">第二章　共生を可能とする経済社会</span><span class="curated-lang curated-en notranslate" lang="en">An Economy and Society That Enable Harmonious Coexistence</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">資本主義が抱える課題を乗り越え、自由と公正を基盤とした「ステークホルダー資本主義」や「循環型社会」への転換を通じて、誰もが幸福を追求できる2050年の共生社会の実現を目指します。</span><span class="curated-lang curated-en notranslate" lang="en">We envision a sustainable and inclusive society by 2050, where everyone can pursue well-being and thrive through the transition to stakeholder capitalism and a circular economy, underpinned by the principles of freedom and fairness.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-        <!-- ④ 第三章 -->
-        <li>
-          <a class="content-card" href="contents_03.html" data-href="contents_03.html">
-            <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#162840 0%,#234060 60%,#3572a0 100%);">
-              <span class="ph-num"><img src="./assets/summary/chapter3.png" /></span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Chapter III</span>
-              <h3 class="card-title">第三章　人の生の有り様とそれを支える産業</h3>
-              <p class="card-excerpt">
-                2050年、医療・ヘルスケアは、誰もが自らの生き方を選び、健康を支えられる基盤へ。サービス・流通は、モノや利便性を届けるだけでなく、人とのつながりや創造性、精神的な満足と自己実現を支える社会インフラへと進化する。
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+<!-- ④ 第三章 -->
+<li>
+<a class="content-card" data-href="contents_03.html" href="contents_03.html">
+<div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#162840 0%,#234060 60%,#3572a0 100%);">
+<span class="ph-num"><img src="./assets/summary/chapter3.png"/></span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Chapter III</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">第三章　人の生の有り様とそれを支える産業</span><span class="curated-lang curated-en notranslate" lang="en">Ways of Living and the Industries That Support Them</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">2050年、医療・ヘルスケアは、誰もが自らの生き方を選び、健康を支えられる基盤へ。サービス・流通は、モノや利便性を届けるだけでなく、人とのつながりや創造性、精神的な満足と自己実現を支える社会インフラへと進化する。</span><span class="curated-lang curated-en notranslate" lang="en">By 2050, healthcare will evolve into a foundation that empowers everyone to shape their own lives and well-being. Services and commerce will go beyond delivering goods and convenience, becoming social infrastructure that fosters human connection, creativity, fulfillment, and self-realization.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-        <!-- ⑤ 第四章 -->
-        <li>
-          <a class="content-card" href="contents_04.html" data-href="contents_04.html">
-            <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0e2a42 0%,#1c3e60 60%,#2e6898 100%);">
-              <span class="ph-num"><img src="./assets/summary/chapter4.png" /></span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Chapter IV</span>
-              <h3 class="card-title">第四章　技術革新と、自由と公正の社会の両立、その継承</h3>
-              <p class="card-excerpt">
-                技術による格差や分断が懸念される2050年。技術をアクセル、倫理をステアリングとし、自由と公正のもと誰もが幸福を追求できる社会を自律的に創り、次世代へ確かな希望を継承する。
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+<!-- ⑤ 第四章 -->
+<li>
+<a class="content-card" data-href="contents_04.html" href="contents_04.html">
+<div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0e2a42 0%,#1c3e60 60%,#2e6898 100%);">
+<span class="ph-num"><img src="./assets/summary/chapter4.png"/></span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Chapter IV</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">第四章　技術革新と、自由と公正の社会の両立、その継承</span><span class="curated-lang curated-en notranslate" lang="en">Innovation with Freedom &amp; Fairness - Building the Future</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">技術による格差や分断が懸念される2050年。技術をアクセル、倫理をステアリングとし、自由と公正のもと誰もが幸福を追求できる社会を自律的に創り、次世代へ確かな希望を継承する。</span><span class="curated-lang curated-en notranslate" lang="en">2050: Facing risks of technological divide. With technology as the accelerator and ethics as the steering, we build a society of freedom and justice where all pursue happiness, passing certain hope to the next generation.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-        <!-- ⑥ 第五章 -->
-        <li>
-          <a class="content-card" href="contents_05.html" data-href="contents_05.html">
-            <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#102c46 0%,#1f4468 60%,#347cac 100%);">
-              <span class="ph-num"><img src="./assets/summary/chapter5.png" /></span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Chapter V</span>
-              <h3 class="card-title">第五章　大義ある未来のための教育</h3>
-              <p class="card-excerpt">
-                環境や才能という偶然に左右されず、全ての人が幸福を追求できる社会へ。幼児期から高齢期までの生涯学習グランドデザインを通じて、主体的な学びと世代を超えた「知の循環」を目指す。
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+<!-- ⑥ 第五章 -->
+<li>
+<a class="content-card" data-href="contents_05.html" href="contents_05.html">
+<div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#102c46 0%,#1f4468 60%,#347cac 100%);">
+<span class="ph-num"><img src="./assets/summary/chapter5.png"/></span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Chapter V</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">第五章　大義ある未来のための教育</span><span class="curated-lang curated-en notranslate" lang="en">Education for a Future Worth Pursuing</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">環境や才能という偶然に左右されず、全ての人が幸福を追求できる社会へ。幼児期から高齢期までの生涯学習グランドデザインを通じて、主体的な学びと世代を超えた「知の循環」を目指す。</span><span class="curated-lang curated-en notranslate" lang="en">A society where the pursuit of happiness is open to all — not constrained by the circumstances of your birth or the talents you happen to have. Our lifelong learning grand design, from early childhood through later life, cultivates self-directed learners and a generational cycle of knowledge.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-        <!-- ⑦ 第六章 -->
-        <li>
-          <a class="content-card" href="contents_06.html" data-href="contents_06.html">
-            <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#112e4a 0%,#1e4670 60%,#3078b0 100%);">
-              <span class="ph-num"><img src="./assets/summary/chapter6.png" /></span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Chapter VI</span>
-              <h3 class="card-title">第六章　未来社会の実現を加速するビジネスモデル</h3>
-              <p class="card-excerpt">
-                未来社会の実現を加速する新たなビジネスモデルを構想し、挑戦の道筋と成長機会として17のビジネスモデルを提案します。
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+<!-- ⑦ 第六章 -->
+<li>
+<a class="content-card" data-href="contents_06.html" href="contents_06.html">
+<div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#112e4a 0%,#1e4670 60%,#3078b0 100%);">
+<span class="ph-num"><img src="./assets/summary/chapter6.png"/></span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Chapter VI</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">第六章　未来社会の実現を加速するビジネスモデル</span><span class="curated-lang curated-en notranslate" lang="en">Business Models for Transformative Change</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">未来社会の実現を加速する新たなビジネスモデルを構想し、挑戦の道筋と成長機会として17のビジネスモデルを提案します。</span><span class="curated-lang curated-en notranslate" lang="en">This chapter proposes 17 innovative business models designed to accelerate the transition toward a future society. Each model identifies pathways for addressing emerging challenges, creating sustainable value, and unlocking new opportunities for growth and societal impact.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-        <!-- ⑧ 終章 -->
-        <li>
-          <a class="content-card" href="contents_07.html" data-href="contents_07.html">
-            <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0d2340 0%,#193358 60%,#2a5e8c 100%);">
-              <span class="card-num-badge">終章</span>
-              <span class="ph-num">Epilogue</span>
-            </div>
-            <div class="card-body">
-              <span class="card-chapter">Epilogue</span>
-              <h3 class="card-title">終章　終わりなき航海を次なる走者へ託して</h3>
-              <p class="card-excerpt">
-                52人の想いを結集して「大義ある未来」を描き、多様な視点から未来を考えるヒントを示します。
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+<!-- ⑧ 終章 -->
+<li>
+<a class="content-card" data-href="contents_07.html" href="contents_07.html">
+<div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0d2340 0%,#193358 60%,#2a5e8c 100%);">
+<span class="card-num-badge">終章</span>
+<span class="ph-num">Epilogue</span>
+</div>
+<div class="card-body">
+<span class="card-chapter">Epilogue</span>
+<h3 class="card-title"><span class="curated-lang curated-ja notranslate">終章　終わりなき航海を次なる走者へ託して</span><span class="curated-lang curated-en notranslate" lang="en">Reflections from 52 Perspectives</span></h3>
+<p class="card-excerpt">
+                <span class="curated-lang curated-ja notranslate">52人の想いを結集して「大義ある未来」を描き、多様な視点から未来を考えるヒントを示します。</span><span class="curated-lang curated-en notranslate" lang="en">Drawing upon the collective aspirations, insights, and experiences of 52 participants, this chapter presents diverse perspectives on a “Purposeful Future.” It aims to inspire readers to reflect on their own role in shaping the future and to serve as a source of insight for meaningful action and dialogue.</span>
               </p>
-              <span class="card-read-more">
-                続きを読む
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M3 8h10M9 4l4 4-4 4"/>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </li>
-
-      </ul><!-- /contents-list -->
-    </div>
-  </section>
-
-  <!-- ================================================================
+<span class="card-read-more">
+                <span class="curated-lang curated-ja notranslate">続きを読む</span><span class="curated-lang curated-en notranslate" lang="en">more</span>
+                <svg fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 16 16">
+<path d="M3 8h10M9 4l4 4-4 4"></path>
+</svg>
+</span>
+</div>
+</a>
+</li>
+</ul><!-- /contents-list -->
+</div>
+</section>
+<!-- ================================================================
        ABOUT / MESSAGE
   ================================================================ -->
-  <section class="about-section" id="about">
-    <div class="about-inner">
-      <span class="about-en">About this site</span>
-      <div class="about-divider"></div>
-      <p class="about-body">
-        このサイトについての説明文・メッセージをここに入力します。<br>
-        なぜこのプロジェクトを始めたのか、誰に向けて書いているのか、<br>
-        何を実現したいのかを3〜5文程度で記してください。<br><br>
-        読者への思いや、このサイトが大切にしている価値観なども<br>
+<section class="about-section" id="about">
+<div class="about-inner">
+<span class="about-en">About this site</span>
+<div class="about-divider"></div>
+<p class="about-body">
+        このサイトについての説明文・メッセージをここに入力します。<br/>
+        なぜこのプロジェクトを始めたのか、誰に向けて書いているのか、<br/>
+        何を実現したいのかを3〜5文程度で記してください。<br/><br/>
+        読者への思いや、このサイトが大切にしている価値観なども<br/>
         ここで表現することができます。
       </p>
-      <p style="margin-top:30px;"><a href="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001">本編はこちら</a></p>
-
-    </div>
-  </section>
-
+<p style="margin-top:30px;"><a href="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001">本編はこちら</a></p>
+</div>
+</section>
 <!-- ================================================================
        JAVASCRIPT
   ================================================================ -->
-  <script>
+<script>
     /* ── ヘッダー スクロール ── */
     const hdr = document.getElementById('siteHeader');
     window.addEventListener('scroll', () => {
@@ -1057,6 +1053,42 @@
       });
     });
   </script>
+<script>
+    window.gtranslateSettings = {
+      "default_language": "ja",
+      "native_language_names": true,
+      "detect_browser_language": false,
+      "languages": ["ja", "en"],
+      "wrapper_selector": ".gtranslate_wrapper"
+    };
+</script><script defer="" src="https://cdn.gtranslate.net/widgets/latest/dropdown.js"></script><script>
+    (function () {
+      function setCuratedLanguage(value) {
+        var lang = (value === 'ja|en' || value === 'en') ? 'en' : 'ja';
+        document.documentElement.setAttribute('data-curated-lang', lang);
+      }
 
-</body>
+      document.addEventListener('change', function (event) {
+        var selector = event.target;
+        if (!selector || !selector.matches ||
+            !selector.matches('.gtranslate_wrapper select.gt_selector')) return;
+        setCuratedLanguage(selector.value);
+      });
+
+      function syncWithSelector(attempt) {
+        var selector = document.querySelector('.gtranslate_wrapper select.gt_selector');
+        if (selector) {
+          setCuratedLanguage(selector.value);
+          return;
+        }
+        if (attempt < 50) {
+          setTimeout(function () { syncWithSelector(attempt + 1); }, 100);
+        }
+      }
+
+      window.addEventListener('load', function () {
+        syncWithSelector(0);
+      });
+    })();
+</script></body>
 </html>
