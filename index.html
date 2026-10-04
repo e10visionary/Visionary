@@ -800,7 +800,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 <li>
 <a class="content-card" data-href="contents_pre.html" href="contents_pre.html">
 <div class="card-thumb-placeholder">
-<span class="ph-num"><img src="./assets/summary/chapter_pre.png"/></span>
+<span class="ph-num"><img src="./assets/summary/chapter_pre.png" data-ja="./assets/summary/chapter_pre.png" data-en="./assets/summary/chapter_pre_en.png"/></span>
 </div>
 <div class="card-body">
 <span class="card-chapter">Prologue</span>
@@ -821,7 +821,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 <li>
 <a class="content-card" data-href="contents_01.html" href="contents_01.html">
 <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0d2340 0%,#1a3a5c 60%,#2d6a9f 100%);">
-<span class="ph-num"><img src="./assets/summary/chapter1.png"/></span>
+<span class="ph-num"><img src="./assets/summary/chapter1.png" data-ja="./assets/summary/chapter1.png" data-en="./assets/summary/chapter1_en.png"/></span>
 </div>
 <div class="card-body">
 <span class="card-chapter">Chapter I</span>
@@ -842,7 +842,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 <li>
 <a class="content-card" data-href="contents_02.html" href="contents_02.html">
 <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#12324e 0%,#1e4d6b 60%,#3a7fa8 100%);">
-<span class="ph-num"><img src="./assets/summary/chapter2.png"/></span>
+<span class="ph-num"><img src="./assets/summary/chapter2.png" data-ja="./assets/summary/chapter2.png" data-en="./assets/summary/chapter2_en.png"/></span>
 </div>
 <div class="card-body">
 <span class="card-chapter">Chapter II</span>
@@ -863,7 +863,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 <li>
 <a class="content-card" data-href="contents_03.html" href="contents_03.html">
 <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#162840 0%,#234060 60%,#3572a0 100%);">
-<span class="ph-num"><img src="./assets/summary/chapter3.png"/></span>
+<span class="ph-num"><img src="./assets/summary/chapter3.png" data-ja="./assets/summary/chapter3.png" data-en="./assets/summary/chapter3_en.png"/></span>
 </div>
 <div class="card-body">
 <span class="card-chapter">Chapter III</span>
@@ -884,7 +884,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 <li>
 <a class="content-card" data-href="contents_04.html" href="contents_04.html">
 <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#0e2a42 0%,#1c3e60 60%,#2e6898 100%);">
-<span class="ph-num"><img src="./assets/summary/chapter4.png"/></span>
+<span class="ph-num"><img src="./assets/summary/chapter4.png" data-ja="./assets/summary/chapter4.png" data-en="./assets/summary/chapter4_en.png"/></span>
 </div>
 <div class="card-body">
 <span class="card-chapter">Chapter IV</span>
@@ -905,7 +905,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 <li>
 <a class="content-card" data-href="contents_05.html" href="contents_05.html">
 <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#102c46 0%,#1f4468 60%,#347cac 100%);">
-<span class="ph-num"><img src="./assets/summary/chapter5.png"/></span>
+<span class="ph-num"><img src="./assets/summary/chapter5.png" data-ja="./assets/summary/chapter5.png" data-en="./assets/summary/chapter5_en.png"/></span>
 </div>
 <div class="card-body">
 <span class="card-chapter">Chapter V</span>
@@ -926,7 +926,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
 <li>
 <a class="content-card" data-href="contents_06.html" href="contents_06.html">
 <div class="card-thumb-placeholder" style="background: linear-gradient(135deg,#112e4a 0%,#1e4670 60%,#3078b0 100%);">
-<span class="ph-num"><img src="./assets/summary/chapter6.png"/></span>
+<span class="ph-num"><img src="./assets/summary/chapter6.png" data-ja="./assets/summary/chapter6.png" data-en="./assets/summary/chapter6_en.png"/></span>
 </div>
 <div class="card-body">
 <span class="card-chapter">Chapter VI</span>
@@ -982,7 +982,7 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
         読者への思いや、このサイトが大切にしている価値観なども<br/>
         ここで表現することができます。
       </p>
-<p style="margin-top:30px;"><a href="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001">本編はこちら</a></p>
+<p style="margin-top:30px;"><a id="koaraMainLink" href="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001&ml_lang=ja" data-ja="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001&ml_lang=ja" data-en="https://koara.lib.keio.ac.jp/xoonips/modules/xoonips/detail.php?koara_id=KO40003005-00002025-0001&ml_lang=en">本編はこちら</a></p>
 </div>
 </section>
 <!-- ================================================================
@@ -1066,6 +1066,17 @@ Bringing together the wisdom and passion of 52 individuals, this report charts a
       function setCuratedLanguage(value) {
         var lang = (value === 'ja|en' || value === 'en') ? 'en' : 'ja';
         document.documentElement.setAttribute('data-curated-lang', lang);
+
+        // コンテンツ画像もGTranslateの選択言語に同期
+        document.querySelectorAll('img[data-ja][data-en]').forEach(function (img) {
+          img.src = (lang === 'en') ? img.dataset.en : img.dataset.ja;
+        });
+
+        // 慶應義塾大学KOARA「本編はこちら」のリンク先も言語に同期
+        var koaraLink = document.getElementById('koaraMainLink');
+        if (koaraLink) {
+          koaraLink.href = (lang === 'en') ? koaraLink.dataset.en : koaraLink.dataset.ja;
+        }
       }
 
       document.addEventListener('change', function (event) {
