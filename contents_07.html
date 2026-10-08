@@ -67,7 +67,9 @@
     <div class="page-hero-inner">
       <p class="page-hero-en">Final Chapter</p>
       <span class="page-hero-badge">終章</span>
-      <h1 class="page-hero-title">終章　終わりなき航海を<br>次なる走者へ託して</h1>
+      <h1 class="page-hero-title">終章　終わりなき航海を<br>次なる走者へ託して
+       <div class="img-placeholder"><img src="./assets/summary/chapter7.png" data-ja="./assets/summary/chapter7.png" data-en="./assets/summary/chapter7_en.png" alt="終章　終わりなき航海を次なる走者へ託して"></div>
+      </h1>
       <div class="page-hero-divider"></div>
     </div>
     <div class="page-hero-wave">
@@ -270,6 +272,47 @@
         window.location.reload();
       }
     }, true);
+  </script>
+  <!-- 言語選択に合わせて図版も日英で切り替える -->
+  <script>
+    (function () {
+      function switchChapterImages(lang) {
+        document.querySelectorAll('img[data-ja][data-en]').forEach(function (img) {
+          img.src = (lang === 'en') ? img.dataset.en : img.dataset.ja;
+        });
+      }
+
+      // GTranslateのselectorは外部JSが後から生成するため、changeをdocumentで監視
+      // value は 'ja|ja' / 'ja|en' の形式で返る
+      document.addEventListener('change', function (event) {
+        const selector = event.target;
+        if (!selector || !selector.matches ||
+            !selector.matches('.gtranslate_wrapper select.gt_selector')) return;
+
+        if (selector.value === 'ja|en') {
+          switchChapterImages('en');
+        } else if (selector.value === 'ja|ja') {
+          switchChapterImages('ja');
+        }
+      });
+
+      // 翻訳状態を維持した再読込にも対応。
+      // GTranslateのselector生成後、その現在値に画像を合わせる。
+      function syncImagesWithSelector(attempt) {
+        const selector = document.querySelector('.gtranslate_wrapper select.gt_selector');
+        if (selector) {
+          switchChapterImages(selector.value === 'ja|en' ? 'en' : 'ja');
+          return;
+        }
+        if (attempt < 50) {
+          setTimeout(function () { syncImagesWithSelector(attempt + 1); }, 100);
+        }
+      }
+
+      window.addEventListener('load', function () {
+        syncImagesWithSelector(0);
+      });
+    })();
   </script>
 </body>
 </html>
