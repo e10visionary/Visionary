@@ -213,6 +213,18 @@
     const overlay = document.getElementById('pageOverlay');
     window.addEventListener('load', () => { overlay.style.transform = 'scaleY(0)'; });
 
+    // Back/forward cache (bfcache) restoration does not fire load.
+    // Always dismiss the page-transition overlay when returning via browser history.
+    window.addEventListener('pageshow', () => {
+      overlay.style.transition = 'none';
+      overlay.style.transform = 'scaleY(0)';
+      overlay.style.transformOrigin = 'top';
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { overlay.style.transition = ''; });
+      });
+      document.body.style.overflow = '';
+    });
+
     document.querySelectorAll('a[href]').forEach(link => {
       const href = link.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto')) return;
