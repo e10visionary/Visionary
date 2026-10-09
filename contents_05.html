@@ -92,7 +92,7 @@
 
     <!-- 本文セクション -->
 
-      <div class="content-section">
+      <div class="content-section in-view">
         <h2>なぜ今、教育を問うのか</h2>
         <p>大義ある未来の議論のなかで各グループに通底するテーマの一つに教育があげられる。実
         際、“環境、エネルギー、食料”のグループにおいては、教育機関による食育、倫理教育、
@@ -103,7 +103,7 @@
        リテラシー教育を進めるなど倫理面、技術面、格差問題など様々な問題を解決するであろ
         うテーマとして教育が挙げられ続けてきた。</p>
       </div>
-      <div class="content-section">
+      <div class="content-section in-view">
         <h2>多様な教育メソッドの理念と特徴</h2>
        <p>一方的に知識を教え込むのではなく、「子ども自らが学ぶ力」を信じ、主体性や社会性、探究心を育むという姿勢。
         特に、他者との対話や協働を通じて問題解決を図る姿勢や、自らの学習を振り返る内省のプロセスが重要視されています</p>
@@ -112,7 +112,7 @@
           <img src="./assets/chapter5/5-1.png" data-ja="./assets/chapter5/5-1.png" data-en="./assets/chapter5/5-1_en.png" alt="education">
         </div>
       </div>
-      <div class="content-section">
+      <div class="content-section in-view">
         <h2>生涯教育と人的資本の最大化</h2>
         <p>各ライフステージにおける学びの転換。
 就学前・初等教育: 早期の非認知能力（自制心、忍耐力等）の育成。
@@ -197,7 +197,7 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
     document.querySelectorAll('.content-section').forEach(el => io.observe(el));
 
     /* ── ページ遷移 ── */
